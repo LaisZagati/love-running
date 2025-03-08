@@ -1,5 +1,5 @@
 /* Asterisk wildcard selector to override default styles added by the browser */
-{
+* {
     padding: 0;                  /* Removes default padding from all elements */
     margin: 0;                       /* Removes default margin from all elements */
     box-sizing: border-box;          /* Ensures padding and border are included in the element's total width/height */
@@ -48,10 +48,11 @@ h1 {
     font-size: 110%;                /* Increases font size by 10% */
     letter-spacing: 4px;            /* Adds space between letters */
     list-style-type: none;          /* Removes bullet points from list */
-}
+    gap: 1rem;                      /* Adds space between menu items */
+}   
 
 #menu > li {
-    margin-bottom: 1em;             /* Adds space below each list item */
+    margin-bottom: 1rem;             /* Adds space below each list item */
 }
 
 .active {
@@ -74,27 +75,45 @@ nav {
 /* When the checkbox with id 'nav-toggle' is checked,
    the sibling 'nav' element (which is the navigation menu) 
    will have its display property set to block, making it visible. */
-#nav-toggle:checked~nav {
-    display: block;                   /* Shows the navbar when the nav-toggle checkbox is checked */
+#nav-toggle:checked ~ nav{
+    display:block;
+}
+/*To not appear the checkbox */
+#nav-toggle{
+    display: none;  /* Hides the checkbox input element from view (but it still functions behind the scenes) */
 }
 
-#nav-toggle {
-    display: none; 
+.nav-toggle-label{
+    font-size: 2rem;  /* Sets the font size of the label to 2rem, making it larger and more visible */
 }
-
-.nav-toggle-label {
-    font-size: 2rem;
-}
-
 
 /* Main content */
 main {
     background-color: lightblue;
     /* Make main element take up any surplus space to push footer down */
     flex: 1 0 auto; /* Allows the item to grow, prevents shrinking, and uses its natural size as the base */
+    margin-top: 47px;  /* Adds space of 47px above the element, pushing it downward */
 }
 
 /* Footer */
 footer {
     background-color: orange;
+}
+
+@media screen and (min-width: 768px) {
+    /* Header */
+    nav {
+        display: block;
+        position: relative;
+        box-shadow: none;
+        width:fit-content;
+        padding-right: 1rem;
+    }
+
+#menu {
+        display: flex;
+    }
+
+.nav-toggle-label {
+    display: none;
 }
