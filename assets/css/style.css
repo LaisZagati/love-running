@@ -100,31 +100,42 @@ footer {
     background-color: orange;
 }
 
+/* Styles for screens that are 768px or wider (typically tablets and desktops) */
 @media screen and (min-width: 768px) {
+
     /* Header */
     nav {
-        display: block;
-        position: relative;
-        box-shadow: none;
-        width:fit-content;
-        padding-right: 1rem;
-    }
-#menu {
-        display: flex;
+        display: block; /* Ensures the navigation menu is always visible on larger screens */
+        position: relative; /* Resets position so it's no longer absolute (used in mobile view) */
+        box-shadow: none; /* Removes shadow for a cleaner look on larger screens */
+        width: fit-content; /* Makes the navigation width fit its content */
+        padding-right: 1rem; /* Adds some spacing on the right */
     }
 
-.nav-toggle-label {
-    display: none;
+    #menu {
+        display: flex; /* Arranges menu items in a row instead of stacking them */
+    }
+
+    .nav-toggle-label {
+        display: none; /* Hides the menu toggle button on larger screens since it's not needed */
+    }
+
+    #logo {
+        font-size: 280%; /* Increases logo size for better visibility on larger screens */
+        line-height: 75px; /* Adjusts line height for better alignment */
+        margin: 0 0.5rem; /* Adds horizontal margin for spacing */
+    }
+
+    /* Main content */
+    main {
+        margin-top: 79px; /* Pushes main content down to accommodate the larger header */
+    }
 }
 
-#logo {
-    font-size: 280%;
-    line-height: 75px;
-    margin: 0 0.5rem;
-}
 
-main {
-    margin-top: 79px;
-}
-
+/* Larger devices (laptops and desktops, 992px and up) */
+@media screen and (min-width: 992px) {
+    #menu a:hover{
+        border-bottom: 1px solid #3a3a3a; /* Adds a bottom border to elements with the "active" class */
+    }
 }
