@@ -1,8 +1,8 @@
 /* Asterisk wildcard selector to override default styles added by the browser */
 {
     padding: 0;                  /* Removes default padding from all elements */
-margin: 0;                       /* Removes default margin from all elements */
-box-sizing: border-box;          /* Ensures padding and border are included in the element's total width/height */
+    margin: 0;                       /* Removes default margin from all elements */
+    box-sizing: border-box;          /* Ensures padding and border are included in the element's total width/height */
 
 }
 
@@ -20,12 +20,16 @@ body {
 
 /* Header */
 header {
-    background-color: #ffffff; /* Sets background color to white */
-    padding: 0 1rem;             /* Adds horizontal padding of 1rem */
-    position: fixed;             /* Fixes the header at the top of the screen */
-    z-index: 99;                 /* Ensures the header is above other elements */
-    width: 100%;                 /* Makes the header span the full width of the screen */
-    box-shadow: 0 2px 2px #3a3a3a; /* Adds a subtle shadow beneath the header */
+    background-color: #ffffff;        /* Sets background color to white */
+    padding: 0 1rem;                    /* Adds horizontal padding of 1rem */
+    position: fixed;                    /* Fixes the header at the top of the screen */
+    z-index: 99;                        /* Ensures the header is above other elements */
+    width: 100%;                        /* Makes the header span the full width of the screen */
+    box-shadow: 0 2px 2px #3a3a3a;    /* Adds a subtle shadow beneath the header */
+    display: flex;                      /* Enables flexbox layout for the container */
+    justify-content: space-between;     /* Distributes space between items, placing the first item at the start and the last item at the end */
+    align-items: baseline;              /* Aligns items based on their text baseline, ensuring the text sits on the same line */
+    
 }
 
 header a {
@@ -52,6 +56,34 @@ h1 {
 
 .active {
     border-bottom: 1px solid #3a3a3a; /* Adds a bottom border to elements with the "active" class */
+}
+
+/* Navbar styles with dropdown toggle */
+nav {
+    position: absolute;               /* Positions the navigation absolutely within its nearest positioned ancestor */
+    background-color: #ffffff;      /* Sets the background color of the navbar to white */
+    width: 100%;                      /* Ensures the navbar takes up the full width of the viewport */
+    left: 0;                          /* Aligns the navbar to the left edge of its container */
+    padding: 0 1rem;                  /* Adds horizontal padding (left and right) of 1rem inside the navbar */
+    box-shadow: 0 2px 2px #3a3a3a;  /* Adds a shadow effect below the navbar for depth */
+    display: none;                    /* Hides the navbar by default (used for mobile dropdown menu) */
+    top: 100%;                        /* Positions the navbar just below the top of the parent container */
+}
+
+/* Nav toggle / dropdown for navigation menu on mobile */
+/* When the checkbox with id 'nav-toggle' is checked,
+   the sibling 'nav' element (which is the navigation menu) 
+   will have its display property set to block, making it visible. */
+#nav-toggle:checked~nav {
+    display: block;                   /* Shows the navbar when the nav-toggle checkbox is checked */
+}
+
+#nav-toggle {
+    display: none; 
+}
+
+.nav-toggle-label {
+    font-size: 2rem;
 }
 
 
