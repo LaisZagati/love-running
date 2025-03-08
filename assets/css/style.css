@@ -1,35 +1,42 @@
 /* Asterisk wildcard selector to override default styles added by the browser */
 {
-    padding: 0;
-    margin: 0;
-    box-sizing: border-box;
+    padding: 0;                  /* Removes default padding from all elements */
+margin: 0;                       /* Removes default margin from all elements */
+box-sizing: border-box;          /* Ensures padding and border are included in the element's total width/height */
+
 }
 
 
 /* General styles */
 body {
-    min-height: 100vh;
-    display: flex;
-    flex-direction: column;
+    min-height: 100vh;             /* Ensures the body takes up at least the full height of the viewport */
+    display: flex;                 /* Applies flexbox layout to the body */
+    flex-direction: column;        /* Stacks child elements vertically */
     /* Generic project styles */
-    color: #3a3a3a;
-    font-family: 'Lato', sans-serif;
+    color: #3a3a3a;                /* Sets text color to a dark gray */
+    font-family: 'Lato', sans-serif; /* Sets the font to Lato with a fallback to sans-serif */
 }
+
 
 /* Header */
 header {
-    background-color: lightcoral;
+    background-color: #ffffff; /* Sets background color to white */
+    padding: 0 1rem;             /* Adds horizontal padding of 1rem */
+    position: fixed;             /* Fixes the header at the top of the screen */
+    z-index: 99;                 /* Ensures the header is above other elements */
+    width: 100%;                 /* Makes the header span the full width of the screen */
+    box-shadow: 0 2px 2px #3a3a3a; /* Adds a subtle shadow beneath the header */
 }
 
 h1 {
-    /* font-family: Oswald, sans-serif; */
+    font-family: Oswald, sans-serif; /* Sets the font to Oswald with a fallback to sans-serif */
 }
 
 /* Main content */
 main {
     background-color: lightblue;
     /* Make main element take up any surplus space to push footer down */
-    flex: 1 0 auto;
+    flex: 1 0 auto; /* Allows the item to grow, prevents shrinking, and uses its natural size as the base */
 }
 
 /* Footer */
