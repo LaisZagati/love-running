@@ -28,8 +28,16 @@ header {
     box-shadow: 0 2px 2px #3a3a3a; /* Adds a subtle shadow beneath the header */
 }
 
+header a {
+    text-decoration: none;       /* Removes underline from links */
+    color: inherit;              /* Inherits the color from the parent element */
+}
+
 h1 {
     font-family: Oswald, sans-serif; /* Sets the font to Oswald with a fallback to sans-serif */
+    text-transform: uppercase;       /* Transforms text to uppercase */
+    letter-spacing: 2px;             /* Adds space between each letter */
+    color: #252525;                /* Sets the text color to a dark gray */
 }
 
 /* Main content */
