@@ -40,6 +40,21 @@ h1 {
     color: #252525;                /* Sets the text color to a dark gray */
 }
 
+#menu {
+    font-size: 110%;                /* Increases font size by 10% */
+    letter-spacing: 4px;            /* Adds space between letters */
+    list-style-type: none;          /* Removes bullet points from list */
+}
+
+#menu > li {
+    margin-bottom: 1em;             /* Adds space below each list item */
+}
+
+.active {
+    border-bottom: 1px solid #3a3a3a; /* Adds a bottom border to elements with the "active" class */
+}
+
+
 /* Main content */
 main {
     background-color: lightblue;
