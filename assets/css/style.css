@@ -97,10 +97,24 @@ main {
 }
 
 /* Footer */
-social-networks {
-    
-    
+/* Social Networks Section */
+#social-networks {
+    text-align: center; /* Centers the social network icons */
+    padding: 20px 0; /* Adds vertical padding */
+    display: flex; /* Uses flexbox for layout */
+    justify-content: space-evenly; /* Distributes icons evenly across the section */
+    list-style-type: none; /* Removes default list bullet points */
 }
+
+/* Styling for Social Network Icons */
+#social-networks i {
+   font-size: 160%; /* Increases the icon size */
+   padding: 5%; /* Adds spacing around the icons */
+   color: #3a3a3a; /* Sets the icon color to dark gray */
+}
+
+
+
 
 /* Styles for screens that are 768px or wider (typically tablets and desktops) */
 @media screen and (min-width: 768px) {
