@@ -1,6 +1,6 @@
 /* Asterisk wildcard selector to override default styles added by the browser */
 * {
-    padding: 0;                  /* Removes default padding from all elements */
+    padding: 0;                      /* Removes default padding from all elements */
     margin: 0;                       /* Removes default margin from all elements */
     box-sizing: border-box;          /* Ensures padding and border are included in the element's total width/height */
 
@@ -96,6 +96,12 @@ main {
     margin-top: 47px;  /* Adds space of 47px above the element, pushing it downward */
 }
 
+#hero {
+    height: 700px;
+    width: 100%;
+    background: url("../images/hero-image.webp") no-repeat center center/cover;
+}
+
 /* Footer */
 /* Social Networks Section */
 #social-networks {
@@ -112,8 +118,6 @@ main {
    padding: 5%; /* Adds spacing around the icons */
    color: #3a3a3a; /* Sets the icon color to dark gray */
 }
-
-
 
 
 /* Styles for screens that are 768px or wider (typically tablets and desktops) */
@@ -133,7 +137,7 @@ main {
     }
 
     #menu > li {
-        padding-left: 1rem;             /* Adds space below each list item */
+        padding-left: 1rem; /* Adds space below each list item */
     }
 
     .nav-toggle-label {
