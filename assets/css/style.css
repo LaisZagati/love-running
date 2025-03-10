@@ -24,6 +24,10 @@ h1, h2, h3 {
     color: #252525;                /* Sets the text color to a dark gray */
 }
 
+.hidden-heading{
+    display:none;
+}
+
 
 /* Header */
 header {
@@ -49,7 +53,6 @@ header a {
     font-size: 110%;                /* Increases font size by 10% */
     letter-spacing: 4px;            /*Adds space between letters */
     list-style-type: none;          /* Removes bullet points from list */
-    /* gap: 1rem;                      Adds space between menu items */
 }   
 
 #menu > li {
@@ -91,39 +94,134 @@ nav {
 
 /* Main content */
 main {
-    background-color: lightblue;
-    /* Make main element take up any surplus space to push footer down */
-    flex: 1 0 auto; /* Allows the item to grow, prevents shrinking, and uses its natural size as the base */
-    margin-top: 47px;  /* Adds space of 47px above the element, pushing it downward */
+    /* Enlarge main element to push footer down */
+    flex: 1 0 auto;
+
+    /* Add margin at the top to prevent content from being covered by the header */
+    margin-top: 47px;
+
+    /* Enable flex properties for child elements */
+    display: flex;
+    flex-direction: column;
 }
 
-
-/* Hero Section Styles */
+/* Hero section */
 #hero {
-    height: 700px; /* Sets the section height to 700px */
-    width: 100%; /* Makes the section take up the full width of the screen */
-    background: url("../images/hero-image.webp") no-repeat center center/cover; 
-    /* Adds a background image, ensures it doesn't repeat, 
-       centers it, and makes it cover the entire area */
-    background-size: cover; /* Ensures the background fully covers the section */
-    position: relative; /* Makes it a reference point for absolutely positioned child elements */
+    /* Set a fixed height for the hero section */
+    height: 600px;
+    
+    /* Make it take up the full width of the page */
+    width: 100%;
+
+    /* Set background image with no repeat, centered position, and cover mode */
+    background: url("../images/hero-image.webp") no-repeat center center/cover;
+
+    /* Position relative to allow absolute positioning of child elements */
+    position: relative;
 }
 
-/* Cover Text Overlay */
+/* Cover text inside the hero section */
 #cover-text {
-    background-color: rgba(241, 109, 107, .7); /* Adds a semi-transparent red overlay and an alpha .7 at the end */
-    font-size: 130%; /* Increases font size by 30% */
-    position: absolute; /* Positions the text relative to the #hero section */
-    bottom: 30px; /* Places the text 30px above the bottom of #hero */
-    width: 80%; /* Makes the overlay width 80% of #hero's width */
-    height: 200px; /* Sets the overlay height to 200px */
-    padding-top: 40px; /* Adds 40px padding to the top */
-    padding-left: 10px; /* Adds 10px padding to the left */
+    /* Add a semi-transparent background color */
+    background-color: rgba(241, 109, 107, 0.7);
+
+    /* Increase font size */
+    font-size: 130%;
+
+    /* Position the text box absolutely within the #hero section */
+    position: absolute;
+    bottom: 30px;
+
+    /* Set width to 80% of the container */
+    width: 80%;
+
+    /* Add padding for spacing inside the text box */
+    padding-top: 40px;
+    padding-left: 10px;
 }
 
-/* Styling for Heading Elements Inside #cover-text */
-#cover-text > h2, #cover-text > h3 {
-    color: #ffffff; /* Sets text color to white for contrast against the overlay */
+/* Style text inside the cover section */
+#cover-text > h2, 
+#cover-text > h3 {
+    /* Change text color to white */
+    color: #ffffff;
+}
+
+/* Reasons section */
+#reasons {
+    /* Set section width to 90% of the container */
+    width: 90%;
+
+    /* Add margin: top & bottom - 20px, left & right - auto (centers horizontally) */
+    margin: 20px auto;
+}
+
+/* Title inside the reasons section */
+#reasons > h2 {
+    /* Set font size for emphasis */
+    font-size: 280%;
+
+    /* Add space below the heading */
+    margin-bottom: 20px;
+
+    /* Center align text */
+    text-align: center;
+}
+
+/* Adjust spacing for paragraphs inside benefits sections */
+#benefits-physical > div, 
+#benefits-mental > div {
+    /* Set line height for better readability */
+    line-height: 20px;
+
+    /* Add space below each div */
+    margin-bottom: 20px;
+}
+
+/* Add padding inside all paragraphs inside #benefits */
+#benefits p {
+    padding: 0 20px;
+}
+
+/* Horizontal rule styling */
+hr {
+    /* Add a solid gray border on top */
+    border-top: 1px solid #3a3a3a;
+
+    /* Add spacing above and below */
+    margin: 5px 0;
+}
+
+/* Reasons section image */
+#circle-cover-bg {
+    /* Add a background image with no repeat, centered position, and cover mode */
+    background: url("../images/reasons-image.webp") no-repeat top center / cover;
+
+    /* Set dimensions relative to viewport width (vw) */
+    height: 90vw;
+    width: 90vw;
+
+    /* Add spacing below */
+    margin-bottom: 20px;
+
+    /* Make the image circular */
+    border-radius: 50%;
+
+    /* Set a maximum size for larger screens */
+    max-width: 300px;
+    max-height: 300px;
+}
+
+/* Align benefits image to the center */
+#benefits-image {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+/* Background image for the circle */
+#circle-cover-bg {
+    background: url("../images/reasons-image.webp") no-repeat center center / cover;
 }
 
 
@@ -185,6 +283,24 @@ main {
         width: 300px;
         right: 50px;
     }
+
+    /* Reason section */
+    #benefits-physical,
+    #benefits-mental {
+        display:flex;
+        flex-direction: column;
+        width: 100%;
+    }
+
+    #benefits-physical > div,
+    #benefits-mental > div {
+        width: 75%;
+    }
+
+    #benefits-mental > div {
+        text-align: end;
+        align-self: flex-end;;
+    }
 }
 
 
@@ -194,5 +310,31 @@ main {
         border-bottom: 1px solid #3a3a3a; /* Adds a bottom border to elements with the "active" class */
     }
 }
+
+
+@media screen and (min-width: 1200px) {
+    #benefits {
+        display: flex;
+        flex-direction: row;
+    }
+    #benefits > div {
+        flex:1;
+    }
+    #benefits-image {
+        order:0;
+    }
+    #benefits-mental {
+        order:1;
+    }
+
+    #benefits-mental > div {
+        align-self: flex-start;
+    }
+    #benefits-physical > div {
+        align-self: flex-end;
+    }
+}
+
+
 
 
