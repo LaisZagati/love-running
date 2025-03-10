@@ -273,35 +273,45 @@ hr {
         margin: 0 0.5rem; /* Adds horizontal margin for spacing */
     }
 
-    /* Main content */
-    main {
-        margin-top: 79px; /* Pushes main content down to accommodate the larger header */
-    }
+    /* Hero section */
+#cover-text {
+    /* Set a fixed width for the cover text box */
+    width: 300px;
 
-    /* Hero */
-    #cover-text {
-        width: 300px;
-        right: 50px;
-    }
-
-    /* Reason section */
-    #benefits-physical,
-    #benefits-mental {
-        display:flex;
-        flex-direction: column;
-        width: 100%;
-    }
-
-    #benefits-physical > div,
-    #benefits-mental > div {
-        width: 75%;
-    }
-
-    #benefits-mental > div {
-        text-align: end;
-        align-self: flex-end;;
-    }
+    /* Position the text box 50px from the right */
+    right: 50px;
 }
+
+/* Reason section */
+/* Style for both physical and mental benefits sections */
+#benefits-physical,
+#benefits-mental {
+    /* Use flexbox to structure content */
+    display: flex;
+
+    /* Stack elements in a column layout */
+    flex-direction: column;
+
+    /* Make sections take up the full width of the container */
+    width: 100%;
+}
+
+/* Set width for each div inside benefits sections */
+#benefits-physical > div,
+#benefits-mental > div {
+    /* Make the divs take up 75% of the section width */
+    width: 75%;
+}
+
+/* Additional styling for mental benefits section */
+#benefits-mental > div {
+    /* Align text to the right */
+    text-align: end;
+
+    /* Align the div itself to the end of the flex container */
+    align-self: flex-end;
+}
+
 
 
 /* Larger devices (laptops and desktops, 992px and up) */
@@ -312,26 +322,36 @@ hr {
 }
 
 
+/* Media query for large screens (1200px and wider) */
 @media screen and (min-width: 1200px) {
+    
+    /* Arrange the benefits section in a row instead of a column */
     #benefits {
         display: flex;
         flex-direction: row;
     }
+
+    /* Make all child divs inside #benefits take up equal space */
     #benefits > div {
-        flex:1;
-    }
-    #benefits-image {
-        order:0;
-    }
-    #benefits-mental {
-        order:1;
+        flex: 1;
     }
 
-    #benefits-mental > div {
-        align-self: flex-start;
+    /* Set the order of elements inside #benefits */
+    #benefits-image {
+        order: 0; /* Image appears first */
     }
+
+    #benefits-mental {
+        order: 1; /* Mental benefits section appears second */
+    }
+
+    Align text blocks inside the benefits section
+    #benefits-mental > div {
+        align-self: flex-start; /* Aligns text to the top of the container */
+    }
+
     #benefits-physical > div {
-        align-self: flex-end;
+        align-self: flex-end; /* Aligns text to the bottom of the container */
     }
 }
 
