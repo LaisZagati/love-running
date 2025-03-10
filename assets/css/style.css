@@ -17,6 +17,13 @@ body {
     font-family: 'Lato', sans-serif; /* Sets the font to Lato with a fallback to sans-serif */
 }
 
+h1, h2, h3 {
+    font-family: Oswald, sans-serif; /* Sets the font to Oswald with a fallback to sans-serif */
+    text-transform: uppercase;       /* Transforms text to uppercase */
+    letter-spacing: 2px;             /* Adds space between each letter */
+    color: #252525;                /* Sets the text color to a dark gray */
+}
+
 
 /* Header */
 header {
@@ -37,12 +44,6 @@ header a {
     color: inherit;              /* Inherits the color from the parent element */
 }
 
-h1 {
-    font-family: Oswald, sans-serif; /* Sets the font to Oswald with a fallback to sans-serif */
-    text-transform: uppercase;       /* Transforms text to uppercase */
-    letter-spacing: 2px;             /* Adds space between each letter */
-    color: #252525;                /* Sets the text color to a dark gray */
-}
 
 #menu {
     font-size: 110%;                /* Increases font size by 10% */
@@ -96,11 +97,35 @@ main {
     margin-top: 47px;  /* Adds space of 47px above the element, pushing it downward */
 }
 
+
+/* Hero Section Styles */
 #hero {
-    height: 700px;
-    width: 100%;
-    background: url("../images/hero-image.webp") no-repeat center center/cover;
+    height: 700px; /* Sets the section height to 700px */
+    width: 100%; /* Makes the section take up the full width of the screen */
+    background: url("../images/hero-image.webp") no-repeat center center/cover; 
+    /* Adds a background image, ensures it doesn't repeat, 
+       centers it, and makes it cover the entire area */
+    background-size: cover; /* Ensures the background fully covers the section */
+    position: relative; /* Makes it a reference point for absolutely positioned child elements */
 }
+
+/* Cover Text Overlay */
+#cover-text {
+    background-color: rgba(241, 109, 107, .7); /* Adds a semi-transparent red overlay and an alpha .7 at the end */
+    font-size: 130%; /* Increases font size by 30% */
+    position: absolute; /* Positions the text relative to the #hero section */
+    bottom: 30px; /* Places the text 30px above the bottom of #hero */
+    width: 80%; /* Makes the overlay width 80% of #hero's width */
+    height: 200px; /* Sets the overlay height to 200px */
+    padding-top: 40px; /* Adds 40px padding to the top */
+    padding-left: 10px; /* Adds 10px padding to the left */
+}
+
+/* Styling for Heading Elements Inside #cover-text */
+#cover-text > h2, #cover-text > h3 {
+    color: #ffffff; /* Sets text color to white for contrast against the overlay */
+}
+
 
 /* Footer */
 /* Social Networks Section */
@@ -154,6 +179,12 @@ main {
     main {
         margin-top: 79px; /* Pushes main content down to accommodate the larger header */
     }
+
+    /* Hero */
+    #cover-text {
+        width: 300px;
+        right: 50px;
+    }
 }
 
 
@@ -163,4 +194,5 @@ main {
         border-bottom: 1px solid #3a3a3a; /* Adds a bottom border to elements with the "active" class */
     }
 }
+
 
