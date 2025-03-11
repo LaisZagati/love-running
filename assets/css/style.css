@@ -23,7 +23,8 @@ h1, h2, h3 {
     letter-spacing: 2px;             /* Adds space between each letter */
     color: #252525;                /* Sets the text color to a dark gray */
 }
-
+ 
+/* Hide meet up times header instead of removing for serach engines purposes.  */
 .hidden-heading{
     display:none;
 }
@@ -59,9 +60,9 @@ header a {
     margin-bottom: 1rem;             /* Adds space below each list item */
 }
 
-.active {
-    border-bottom: 1px solid #3a3a3a; /* Adds a bottom border to elements with the "active" class */
-}
+/* .active {
+    border-bottom: 1px solid #3a3a3a; Adds a bottom border to elements with the "active" class
+} */
 
 /* Navbar styles with dropdown toggle */
 nav {
@@ -353,6 +354,32 @@ hr {
     #benefits-physical > div {
         align-self: flex-end; /* Aligns text to the bottom of the container */
     }
+}
+
+/*Meet-up times section */
+#times {
+    background: url("../images/dublin-city.webp") no-repeat center / cover;
+    /* Handles responsivity without the need for a media query */
+    display: flex;
+    flex-wrap: wrap;
+}
+
+#times div {
+    color: #fafafa;           /* Sets text color to a light shade for contrast */
+    background-color: rgba(0, 0, 0, .6);  /* Adds a semi-transparent dark overlay for readability */
+    padding: 15px;              /* Adds padding inside each div for spacing */
+    text-align: center;         /* Centers text within each div */
+    
+    /*This will not wrap on screens of less than 400px wide.
+    Each div will expand to fill the availabe space on it row */
+    flex-basis: 200px;          /* Sets a minimum width of 200px for each div */
+    flex-grow: 1;               /* Allows each div to expand and fill available space */
+    border: 2px solid white;  /* Adds a white border to define each section */
+}
+
+#times h3 {
+    color:#fafafa;     /*Override the heading colour set in general styles*/
+
 }
 
 
