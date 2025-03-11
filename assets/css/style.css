@@ -226,6 +226,43 @@ hr {
 }
 
 
+/*Meet-up times section */
+#times {
+    background: url("../images/dublin-city.webp") no-repeat center / cover;
+    /* Handles responsivity without the need for a media query */
+    display: flex;
+    flex-wrap: wrap;
+}
+
+#times div {
+    color: #fafafa;           /* Sets text color to a light shade for contrast */
+    background-color: rgba(0, 0, 0, .6);  /* Adds a semi-transparent dark overlay for readability */
+    padding: 15px;              /* Adds padding inside each div for spacing */
+    text-align: center;         /* Centers text within each div */
+    
+    /*This will not wrap on screens of less than 400px wide.
+    Each div will expand to fill the availabe space on it row */
+    flex-basis: 200px;          /* Sets a minimum width of 200px for each div */
+    flex-grow: 1;               /* Allows each div to expand and fill available space */
+    border: 2px solid white;  /* Adds a white border to define each section */
+}
+
+#times h3 {
+    color:#fafafa;     /*Override the heading colour set in general styles*/
+
+}
+
+#photos img {
+   width: 100%; 
+   line-height: 1em;;
+}
+
+#photos {
+    line-height: 0;
+
+}
+
+
 /* Footer */
 /* Social Networks Section */
 #social-networks {
@@ -244,11 +281,20 @@ hr {
 }
 
 
-/* Styles for screens that are 768px or wider (typically tablets and desktops) */
+
+/* Larger devices (laptops and desktops, 576px and up) */
+@media screen and (min-width: 576px) {
+   #photos {
+        column-count: 2;   
+        column-gap: 0; 
+    }
+
+
+    /* Styles for screens that are 768px or wider (typically tablets and desktops) */
 @media screen and (min-width: 768px) {
 
     /* Header */
-    nav {
+nav {
         display: block; /* Ensures the navigation menu is always visible on larger screens */
         position: relative; /* Resets position so it's no longer absolute (used in mobile view) */
         box-shadow: none; /* Removes shadow for a cleaner look on larger screens */
@@ -256,23 +302,23 @@ hr {
         padding-right: 1rem; /* Adds some spacing on the right */
     }
 
-    #menu {
+#menu {
         display: flex; /* Arranges menu items in a row instead of stacking them */
     }
 
-    #menu > li {
+#menu > li {
         padding-left: 1rem; /* Adds space below each list item */
     }
 
-    .nav-toggle-label {
+.nav-toggle-label {
         display: none; /* Hides the menu toggle button on larger screens since it's not needed */
     }
 
-    #logo {
+#logo {
         font-size: 280%; /* Increases logo size for better visibility on larger screens */
         line-height: 75px; /* Adjusts line height for better alignment and make more space at the top */
         margin: 0 0.5rem; /* Adds horizontal margin for spacing */
-    }
+    } 
 
     /* Hero section */
 #cover-text {
@@ -313,6 +359,12 @@ hr {
     align-self: flex-end;
 }
 
+/* Gallery */
+
+#photos {
+    column-count: 3;
+}
+
 
 
 /* Larger devices (laptops and desktops, 992px and up) */
@@ -346,7 +398,7 @@ hr {
         order: 1; /* Mental benefits section appears second */
     }
 
-    Align text blocks inside the benefits section
+    /* Align text blocks inside the benefits section */
     #benefits-mental > div {
         align-self: flex-start; /* Aligns text to the top of the container */
     }
@@ -355,33 +407,3 @@ hr {
         align-self: flex-end; /* Aligns text to the bottom of the container */
     }
 }
-
-/*Meet-up times section */
-#times {
-    background: url("../images/dublin-city.webp") no-repeat center / cover;
-    /* Handles responsivity without the need for a media query */
-    display: flex;
-    flex-wrap: wrap;
-}
-
-#times div {
-    color: #fafafa;           /* Sets text color to a light shade for contrast */
-    background-color: rgba(0, 0, 0, .6);  /* Adds a semi-transparent dark overlay for readability */
-    padding: 15px;              /* Adds padding inside each div for spacing */
-    text-align: center;         /* Centers text within each div */
-    
-    /*This will not wrap on screens of less than 400px wide.
-    Each div will expand to fill the availabe space on it row */
-    flex-basis: 200px;          /* Sets a minimum width of 200px for each div */
-    flex-grow: 1;               /* Allows each div to expand and fill available space */
-    border: 2px solid white;  /* Adds a white border to define each section */
-}
-
-#times h3 {
-    color:#fafafa;     /*Override the heading colour set in general styles*/
-
-}
-
-
-
-
