@@ -253,62 +253,65 @@ hr {
 }
 
 #photos img {
-   width: 100%; 
-   line-height: 1em;;
-}
+    width: 100%;  /* Ensures images take up the full width of their container */
+ }
+ 
+ #photos {
+     line-height: 0;  /* Removes extra spacing between inline elements (like images) */
+ }
+ 
 
-#photos {
-    line-height: 0;
-
-}
-
-/*Signup page */
+/* Signup page section */
 #signup {
-    background-image: url("../images/signup-image.webp");
-    background-size: cover;
-    background-position: 75%;
-    padding: 20px 10% 0 10%;
-    flex-grow: 1;
-    
+    background-image: url("../images/signup-image.webp"); /* Background image for the signup section */
+    background-size: cover; /* Ensures the image covers the entire section */
+    background-position: 75%; /* Positions the image slightly to the right */
+    padding: 20px 10% 0 10%; /* Adds spacing around the content */
+    flex-grow: 1; /* Allows the section to expand */
 }
 
+/* Signup form container */
 #signup-form {
-    color: #ffffff;
-    background-color: rgba(60, 60, 60, 0.6);
-    padding: 30px;
-    
+    color: #ffffff; /* White text color */
+    background-color: rgba(60, 60, 60, 0.6); /* Dark semi-transparent background */
+    padding: 30px; /* Adds space inside the form */
 }
 
+/* Signup form heading */
 #signup-form > h2 {
-    color: #fafafa;
-    margin-bottom: 20px;
+    color: #fafafa; /* Light text color */
+    margin-bottom: 20px; /* Adds spacing below the heading */
 }
 
+/* Text input fields */
 .text-input {
-    background: transparent;
-    color: #fafafa;
-    width: 100%;
-    height: 25px;
-    margin: 5px 0 20px 0;
-    border: 1px solid #fafafa;
-    border-radius: 2px;
-    padding: 0 5px;
+    background: transparent; /* Transparent background */
+    color: #fafafa; /* Light text color */
+    width: 100%; /* Full width input fields */
+    height: 25px; /* Sets input field height */
+    margin: 5px 0 20px 0; /* Adds spacing around inputs */
+    border: 1px solid #fafafa; /* White border */
+    border-radius: 2px; /* Slightly rounded corners */
+    padding: 0 5px; /* Adds padding inside the input field */
 }
 
+/* Radio buttons section */
 .radio-buttons {
-    width: 100%;
-    display: flex;
-    justify-content: space-between;
+    width: 100%; /* Full width container */
+    display: flex; /* Displays radio buttons in a row */
+    justify-content: space-between; /* Spaces them evenly */
 }
 
+/* Submit button */
 .join-button {
-    margin-top: 20px;
-    border-radius: 2px;
-    padding: 15px 32px;
-    font-size: 100%;
-    background-color: #454b1b;
-    color: #fafafa;
+    margin-top: 20px; /* Adds spacing above the button */
+    border-radius: 2px; /* Slightly rounded corners */
+    padding: 15px 32px; /* Button padding */
+    font-size: 100%; /* Default font size */
+    background-color: #454b1b; /* Dark green background */
+    color: #fafafa; /* White text */
 }
+
  
 
 /* Footer */
@@ -329,6 +332,7 @@ hr {
 }
 
 
+/* MEDIA QUERIES SECTION */
 
 /* Larger devices (laptops and desktops, 576px and up) */
 @media screen and (min-width: 576px) {
@@ -415,29 +419,26 @@ nav {
     column-count: 3;
 }
 
-/*Signup Form*/
-#signup{
-    position: relative;
-    background-position: center;
+/* Signup form styles */
+#signup-form {
+    position: absolute; /* Positions the form absolutely within its parent container */
+    max-width: 400px; /* Restricts the form width to prevent it from stretching too wide */
+    top: 150px; /* Pushes the form 150px down from the top */
+    left: 10%; /* Positions the form 10% from the left of its parent container */
 }
 
-#signup-form{
-    position: absolute;
-    max-width: 400px;
-    top: 150px;
-    left: 10%;
-
-
-}
-.text-input:hover{
-    border-color:#f16c6b;
+/* Hover effect for text input fields */
+.text-input:hover {
+    border-color: #f16c6b; /* Changes the border color when hovered */
 }
 
-.join-button:hover{
-    background-color: #fafafa;
-    color:#454b1b;
+/* Hover effect for the join button */
+.join-button:hover {
+    background-color: #fafafa; /* Changes the button background color on hover */
+    color: #454b1b; /* Changes the text color on hover */
 }
-}
+
+
 
 
 
