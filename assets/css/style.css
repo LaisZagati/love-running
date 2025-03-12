@@ -262,7 +262,6 @@ hr {
 
 }
 
-
 /* Footer */
 /* Social Networks Section */
 #social-networks {
@@ -282,6 +281,8 @@ hr {
 
 
 
+
+
 /* Larger devices (laptops and desktops, 576px and up) */
 @media screen and (min-width: 576px) {
    #photos {
@@ -290,9 +291,12 @@ hr {
     }
 
 
+
+
     /* Styles for screens that are 768px or wider (typically tablets and desktops) */
 @media screen and (min-width: 768px) {
 
+    
     /* Header */
 nav {
         display: block; /* Ensures the navigation menu is always visible on larger screens */
@@ -367,12 +371,16 @@ nav {
 
 
 
+
+
 /* Larger devices (laptops and desktops, 992px and up) */
 @media screen and (min-width: 992px) {
     #menu a:hover{
         border-bottom: 1px solid #3a3a3a; /* Adds a bottom border to elements with the "active" class */
     }
 }
+
+
 
 
 /* Media query for large screens (1200px and wider) */
